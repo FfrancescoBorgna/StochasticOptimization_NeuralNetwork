@@ -45,10 +45,9 @@ in_test = [m_val(indx_test)',ones(3,1)]; %aggiungiamo il bias
 y_test = M(indx_test,2); %M(:,2) è relativo a 10000 simulazioni
 
 % %training
- [w_t,k_t,iterations]=training(in_training,node_h,w,k,tol,y_training)
-% 
-% out_pred = singleInForwardProp([0.2,1],node_h,w_t,k_t)
-% [out_predicted,] = forwardProp(in_test,node_h,w_t,k_t)
+[w_t,k_t,iterations]=training(in_training,node_h,w,k,tol,y_training) 
+out_pred = singleInForwardProp([0.2,1],node_h,w_t,k_t)
+[out_predicted,] = forwardProp(in_test,node_h,w_t,k_t)
 
 
 function [w_trained,k_trained,m] = training(in,node_h,w,k,tol,y)
